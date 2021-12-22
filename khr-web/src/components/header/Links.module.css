@@ -1,0 +1,26 @@
+.links {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links li {
+    list-style: none;
+
+}
+
+.links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    border-top: 3px solid #fff;
+    padding: 10px 30px;
+}
+
+
+.links a:hover,
+.links a.active {
+    border-top: 3px solid red;
+}

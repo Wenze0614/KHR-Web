@@ -1,17 +1,13 @@
 import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Links from './components/header/Links';
-
+import Header from './components/header/Header';
 function App() {
   return (
     <div className="App">
-      <header>
-        <img src={require('./assets/logo.png')} alt='header-logo'></img>
-        <Links></Links>
-      </header>
+      <Header></Header>
       <Routes>
-        <Route path='/' element={<p>Welcome</p>}></Route>
+        <Route path='/' ></Route>
       </Routes>
     </div>
   );
