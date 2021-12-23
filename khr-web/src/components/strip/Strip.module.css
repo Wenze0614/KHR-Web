@@ -1,0 +1,18 @@
+.strip{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.strip-container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
