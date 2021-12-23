@@ -15,12 +15,14 @@
     text-decoration: none;
     color: #fff;
     text-align: center;
-    border-top: 3px solid #fff;
-    padding: 10px 30px;
+    border-top: 1px solid #fff;
+    padding: 30px 30px;
 }
 
 
-.links a:hover,
+.links a:hover{
+    border-top: 5px solid #fff;
+}
 .links a.active {
-    border-top: 3px solid red;
+    border-top: 3px solid #FD6262;
 }
