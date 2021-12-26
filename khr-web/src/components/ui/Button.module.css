@@ -1,0 +1,15 @@
+.myButton {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid white;
+    border-radius: 6px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 30px;
+    transition:all 0.5s ease-out;
+}
+
+.myButton:hover{
+    color:#5782BB;
+    background-color: white;
+}
