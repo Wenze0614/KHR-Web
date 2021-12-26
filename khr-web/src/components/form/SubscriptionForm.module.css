@@ -1,0 +1,8 @@
+.subscription-form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 70%;
+}
+

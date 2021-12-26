@@ -1,0 +1,40 @@
+.text-input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.text-input label {
+    color: white
+}
+
+.text-input input {
+    position: relative;
+    background: transparent;
+    border: none;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+    color: white;
+    padding: 0px 10px;
+    margin-top: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.text-input input:hover {
+    background: white;
+}
+
+.text-input input:focus {
+    background: white;
+    outline: none;
+    border: none;
+    color: #5782BB
+}
+
+.text-input .error-message {
+    color: red
+}
