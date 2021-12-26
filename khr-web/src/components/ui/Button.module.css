@@ -1,10 +1,11 @@
 .myButton {
     position: relative;
     background-color: rgba(255, 255, 255, 0);
-    border: 2px solid white;
-    border-radius: 6px;
+    border: 1px solid white;
+    border-radius: 12px;
     color: white;
     font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
     padding: 10px 30px;
     transition:all 0.5s ease-out;
 }

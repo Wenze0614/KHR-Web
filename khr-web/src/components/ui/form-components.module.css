@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    width: 80%;
 }
 
 .text-input label {
@@ -15,7 +16,7 @@
     border: none;
     height: 50px;
     border: 1px solid white;
-    border-radius: 6px;
+    border-radius: 12px;
     font-family: 'Poppins', sans-serif;
     font-size: large;
     color: white;
@@ -24,10 +25,7 @@
     transition: all 0.5s ease-in-out;
 }
 
-.text-input input:hover {
-    background: white;
-}
-
+.text-input input:hover,
 .text-input input:focus {
     background: white;
     outline: none;
