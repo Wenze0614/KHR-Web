@@ -22,14 +22,14 @@ const Blog = (props: BlogProps) => {
         <div className={styles[props.className]}>
             <ul>
                 {requiredData && props.queryFor === 'horses' ? requiredData.map((horse: Horse) => {
-                    return(
-                    <li key={horse.id}>
-                        <Card className="horse-card">
-                            <label>{horse.id}</label>
-                            <h2>{horse.attributes.name}</h2>
-                            <p>{horse.attributes.description.substring(0,200)}</p>
-                        </Card>
-                    </li>)
+                    return (
+                        <li key={horse.id}>
+                            <Card className="horse-card">
+                                <label>{horse.id}</label>
+                                <h2>{horse.attributes.name}</h2>
+                                <p>{horse.attributes.description.substring(0, 200)}</p>
+                            </Card>
+                        </li>)
                 }) : null}
             </ul>
         </div>
