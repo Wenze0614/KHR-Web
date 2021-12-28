@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './Strip.module.css'
 
 type stripProp = {
     background:string,
-    children:string
+    children:ReactNode
 }
 const Strip = (props:stripProp) => {
     return (
