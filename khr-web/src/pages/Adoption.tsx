@@ -3,6 +3,14 @@ import React from 'react'
 import Blog from '../components/blog/Blog';
 import Strip from '../components/strip/Strip';
 import styles from '../components/strip/Strip.module.css'
+
+export type Horse = {
+    id:string
+    attributes:{
+        name:string,
+        description:string
+    }
+}
 export default function Adoption() {
     const getHorse = gql`
     query getHorses{
@@ -22,7 +30,7 @@ export default function Adoption() {
             <Strip background="home/home-1.jpg">Adoption</Strip>
             <Strip background="home/home-2.jpg">Adoption</Strip>
             <Strip background="home/home-3.png">
-                <Blog query={getHorse}></Blog>
+                <Blog query={getHorse} queryFor='horses' className='horses-blog'></Blog>
             </Strip>
         </div>
     )

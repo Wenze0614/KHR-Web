@@ -1,0 +1,22 @@
+.horses-blog{
+    position: relative;
+    width: 90%;
+    height: 70%;
+    overflow: scroll;
+}
+
+.horses-blog ul{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.horses-blog ul li{
+    position: relative;
+    width: 30%;
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+
+}
