@@ -30,7 +30,7 @@ export default function Adoption() {
             <Strip background="home/home-1.jpg">Adoption</Strip>
             <Strip background="home/home-2.jpg">Adoption</Strip>
             <Strip background="home/home-3.png">
-                <Blog query={getHorse} queryFor='horses' className='horses-blog'></Blog>
+                <Blog query={getHorse} queryFor='horses' className='horses-blog' blogsPerPage={6}></Blog>
             </Strip>
         </div>
     )

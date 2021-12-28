@@ -2,7 +2,10 @@
     position: relative;
     width: 90%;
     height: 70%;
-    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .horses-blog ul{
@@ -20,3 +23,13 @@
     margin-top: 10px;
 
 }
+
+.pagination {
+    background-color: black;
+
+}
+
+.paginationItem{
+    background-color: white;
+}
+
