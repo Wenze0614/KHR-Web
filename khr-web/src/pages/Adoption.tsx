@@ -14,7 +14,7 @@ export type Horse = {
 export default function Adoption() {
     const getHorse = gql`
     query getHorses{
-        horses{
+        horses(pagination:{limit:-1}){
           data{
             id,
             attributes{

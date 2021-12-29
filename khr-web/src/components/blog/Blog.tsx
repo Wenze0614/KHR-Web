@@ -23,7 +23,7 @@ const Blog = (props: BlogProps) => {
     const requiredData = data[props.queryFor].data;
     const visitedPages = props.blogsPerPage * currPageNumber;
     const pageCounts = Math.ceil(requiredData.length / props.blogsPerPage)
-    console.log(pageCounts)
+    console.log(requiredData.length)
     const displayBlogs = requiredData.slice(visitedPages, visitedPages + props.blogsPerPage).map((item: Horse) => {
         if (props.queryFor === 'horses') {
             return (
