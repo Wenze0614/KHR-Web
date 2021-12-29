@@ -42,7 +42,7 @@ const Blog = (props: BlogProps) => {
     }
     return (
         <div className={styles[props.className]}>
-            <ul>
+            <ul className={styles.blogs}>
                 {/* {requiredData && props.queryFor === 'horses' ? requiredData.map((horse: Horse) => {
                     return (
                         <li key={horse.id}>
