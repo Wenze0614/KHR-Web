@@ -8,7 +8,16 @@ export type Horse = {
     id:string
     attributes:{
         name:string,
-        description:string
+        description:string,
+        image:{
+          data:[
+            {
+              attributes:{
+                url:string
+              }
+            }
+          ]
+        }
     }
 }
 export default function Adoption() {
@@ -19,7 +28,14 @@ export default function Adoption() {
             id,
             attributes{
               name,
-              description
+              description,
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
             }
           }
         }
