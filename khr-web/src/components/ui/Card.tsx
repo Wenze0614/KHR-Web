@@ -8,8 +8,10 @@ interface CardProps{
 
 const Card = (props:CardProps) =>{
     return (
-        <div className={`${styles.card} ${styles[props.className]}`}>
+        <div className={styles.card}>
+            <div className={styles[props.className]}>
             {props.children}
+            </div>
         </div>
     )
 }
