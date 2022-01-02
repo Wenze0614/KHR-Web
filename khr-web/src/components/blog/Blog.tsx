@@ -29,7 +29,7 @@ const Blog = (props: BlogProps) => {
             return (
                 <li key={item.id}>
                     <Card className="horse-card" backgroundImg = {item.attributes.image.data.length > 0? `http://localhost:1337${item.attributes.image.data[0].attributes.url}`:undefined}>
-                        <label>{item.id}</label>
+                        {/* <label>{item.id}</label> */}
                         <h2>{item.attributes.name}</h2>
                         <p>{`${item.attributes.description.substring(0, 100)}...`}</p>
                     </Card>
