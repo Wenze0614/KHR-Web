@@ -1,4 +1,4 @@
-.strip{
+.strip {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -12,23 +12,24 @@
     /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
-.darken-model{
+.darken-model {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: black;
     z-index: 1;
 }
 
-.strip-content{
+.strip-content {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     z-index: 10;
+    width: 70%;
 }
 
-.strip-content > h2{
-    font-size:2rem;
+.strip-content>h2 {
+    font-size: 2rem;
 }

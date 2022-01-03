@@ -5,8 +5,8 @@
     height: 100%;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.7);
-    background-size:contain;
-    background-repeat: no-repeat;
+    background-size:cover;
+    /* background-repeat: no-repeat; */
     background-position: 50% 50%;
     display: flex;
     flex-direction: column;
@@ -35,4 +35,30 @@
 }
 .horse-card *{
     color:white;
+}
+
+.service-card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    clip-path: circle(20% at top);
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease-out;
+}
+
+.card:hover .service-card{
+    clip-path: circle(70%);
+}
+
+.service-card h3{
+    font-weight: 1000;
+}
+
+.service-card p{
+    font-size: 1.2rem;
 }
