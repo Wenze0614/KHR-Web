@@ -9,10 +9,19 @@
     text-align: center;
 }
 
+
 .service-wraper{
     position: relative;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap:20px;
+}
+
+.service-wraper a{
+    color: white;
+}
+
+.service-wraper a:hover{
+    color:#FD6262;
 }
