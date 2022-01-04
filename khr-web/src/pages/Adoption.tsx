@@ -2,8 +2,7 @@ import { gql } from '@apollo/client';
 import React from 'react'
 import Blog from '../components/blog/Blog';
 import Strip from '../components/strip/Strip';
-import styles from '../components/strip/Strip.module.css'
-
+import styles from './Adoption.module.css'
 export type Horse = {
   id: string
   attributes: {
@@ -42,12 +41,12 @@ export default function Adoption() {
       }
     `
   return (
-    <div className={styles["strip-container"]}>
+    <div className={styles.adoption}>
       <Strip background="home/home-1.jpg">Adoption</Strip>
       <Strip background="home/home-2.jpg">Adoption</Strip>
-      <Strip background="home/home-3.png">
+      <Strip background="home/home-3.png" darkness='0.3'>
         <h2>Our Horses</h2>
-        <Blog query={getHorse} queryFor='horses' className='horses-blog' blogsPerPage={6}></Blog>
+        <Blog query={getHorse} queryFor='horses' className='horses-blog' blogsPerPage={8}></Blog>
       </Strip>
     </div>
   )
