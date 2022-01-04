@@ -9,3 +9,7 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+.signIn span:hover{
+    color:#FD6262;
+}

@@ -20,15 +20,18 @@ const SignInForm = () => {
                     password: Yup.string().required("password is required")
                 })}
                 onSubmit={(values: logInProps, { setSubmitting }: FormikHelpers<logInProps>) => {
-
+                    console.log(values)
                 }}
-                >
-                    <form className={styles['signIn-form']}>
-                    <p>Enter your email and password to login</p>
-                    <InputlArea label='Email' className='text-input' name='email' type='email' placeholder=''></InputlArea>
-                    <InputlArea label='Password' className='text-input' name='password' type='password' placeholder=''></InputlArea>
-                    <Button type="submit">Log In</Button>
-                </form>
+            >
+                {formik => {
+                    return (
+                        <form className={styles['signIn-form']} onSubmit={(e)=>{e.preventDefault(); formik.handleSubmit()}}>
+                            <p>Enter your email and password to login</p>
+                            <InputlArea label='Email' className='text-input' name='email' type='email' placeholder=''></InputlArea>
+                            <InputlArea label='Password' className='text-input' name='password' type='password' placeholder=''></InputlArea>
+                            <Button type="submit" disable={!formik.dirty || !formik.isValid ? true:false}>Log In</Button>
+                        </form>)
+                }}
              </Formik>
 
         </Card>
