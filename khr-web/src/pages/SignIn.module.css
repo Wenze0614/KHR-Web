@@ -2,3 +2,10 @@
     font-size: 3rem;
     font-weight: 100;
 }
+
+
+.signIn span{
+    color:#5271BB;
+    text-decoration: underline;
+    cursor: pointer;
+}
