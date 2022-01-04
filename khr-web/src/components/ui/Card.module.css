@@ -1,10 +1,11 @@
 .card{
     position: relative;
     border-radius: 12px;
-    width: 100%;
-    height: 100%;
+    border:1px solid white;
+    /* width: 100%;
+    height: 100%; */
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
+    /* background-color: rgba(0, 0, 0, 0.7); */
     background-size:cover;
     /* background-repeat: no-repeat; */
     background-position: 50% 50%;
@@ -61,4 +62,17 @@
 
 .service-card p{
     font-size: 1.2rem;
+}
+
+.signInForm-card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 30px 50px;
+}
+
+.signInForm-card span{
+    color:#5271BB;
+    text-decoration: underline;
+    cursor: pointer;
 }
