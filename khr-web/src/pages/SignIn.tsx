@@ -5,11 +5,12 @@ import Strip from '../components/strip/Strip'
 import styles from './SignIn.module.css'
 export default function SignIn() {
     const [isSignIn, setSignIn] = useState(true)
+
     return (
         <Strip background="home/home-3.png" darkness='0.3'>
             {isSignIn ? <div className={styles.signIn}>
                 <h2>Log in to our site</h2>
-                <SignInForm />
+                <SignInForm/>
                 <p>Don't have an account? Click <span onClick={() => { setSignIn(false) }}>here</span> to sign up!</p>
             </div> :
                 <div className={styles.signIn}>
