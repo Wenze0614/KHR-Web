@@ -1,19 +1,20 @@
-import { Formik, FormikHelpers } from 'formik';
+import { Formik, FormikHelpers, replace } from 'formik';
 import * as Yup from 'yup'
-import React, { useState, ReactNode } from 'react';
+import React, { useState, ReactNode, useContext } from 'react';
 import { useMutation, DocumentNode, gql } from "@apollo/client";
 import { InputlArea } from '../ui/form-components';
 import Button from '../ui/Button';
 import styles from './SignInForm.module.css'
 import Card from '../ui/Card'
-import { userInfo } from 'os';
+import AuthContext from '../../store/auth-context';
+import { useNavigate} from 'react-router-dom';
 type logInProps = {
     email: string,
     password: string
 }
 
 const SignInForm = () => {
-    const [isValid, setValid] = useState(true) //if user exists
+    const [isValid, setValid] = useState(true) //boolean representing if a user exists
     const LOGIN_USER = gql`
     mutation Login($email: String!, $password:String!) {
         login(input:{
@@ -29,10 +30,10 @@ const SignInForm = () => {
               }
     }
     `;
-
+    const authCtx = useContext(AuthContext)
     // const [login, { data, loading, error }] = useMutation(LOGIN_USER, { onCompleted: ({ login }) => { console.log(login) } })
-    const [login, {loading }] = useMutation(LOGIN_USER)
-
+    const [login, {loading }] = useMutation(LOGIN_USER);
+    const navigate = useNavigate();
     if (loading) return <p>Is Loading</p>;
     // if (error) { console.log("invalid user");};
 
@@ -54,8 +55,10 @@ const SignInForm = () => {
                             ({data})=>{
                                 console.log(data)
                                 setValid(true)
+                                authCtx.login(data.login.jwt, data.login.user)
+                                navigate('/',{replace:true})
                             }
-                        ).catch(e=>{setValid(false)})
+                        ).catch(e=>{setValid(false); })
                 }
                 }
             >
