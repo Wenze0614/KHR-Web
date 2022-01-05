@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
@@ -8,6 +8,7 @@ import Footer from './components/footer/Footer';
 import Adoption from './pages/Adoption';
 import SignIn from './pages/SignIn';
 import Profile from './pages/Profile';
+import AuthContext from './store/auth-context';
 
 const client = new ApolloClient({
   uri: 'https://khr-strapi.herokuapp.com/graphql',
@@ -15,6 +16,7 @@ const client = new ApolloClient({
 })
 
 function App() {
+  const authCtx = useContext(AuthContext)
   return (
     <ApolloProvider client={client}>
       <div className="App">
@@ -22,8 +24,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/adoption' element={<Adoption />}></Route>
-          <Route path='/signIn' element={<SignIn/>}></Route>
-          <Route path='/profile' element={<Profile/>}></Route>
+          {!authCtx.isLoggedIn && <Route path='/signIn' element={<SignIn />}></Route>}
+          {authCtx.isLoggedIn && <Route path='/profile' element={<Profile />}></Route>}
+          <Route path='*' element={<Home/>}></Route>
         </Routes>
         <Footer></Footer>
       </div>
