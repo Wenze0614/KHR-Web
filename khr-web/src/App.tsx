@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Footer from './components/footer/Footer';
 import Adoption from './pages/Adoption';
 import SignIn from './pages/SignIn';
+import Profile from './pages/Profile';
 
 const client = new ApolloClient({
   uri: 'https://khr-strapi.herokuapp.com/graphql',
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={<Home />}></Route>
           <Route path='/adoption' element={<Adoption />}></Route>
           <Route path='/signIn' element={<SignIn/>}></Route>
+          <Route path='/profile' element={<Profile/>}></Route>
         </Routes>
         <Footer></Footer>
       </div>

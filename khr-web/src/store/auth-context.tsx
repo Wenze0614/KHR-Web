@@ -17,7 +17,6 @@ export const AuthContextProvider = (props:{children:ReactNode}) =>{
     const [token, setToken] = useState('')
     const [user, setUser] = useState({id:'',username:'',email:''})
     const isLoggedIn = !!token;
-
     const loginHandler = (token:string, user: User) =>{
         setToken(token)
         setUser(user)
