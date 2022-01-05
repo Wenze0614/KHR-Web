@@ -70,9 +70,3 @@
     height: 100%;
     padding: 30px 50px;
 }
-
-.signInForm-card span{
-    color:#5271BB;
-    text-decoration: underline;
-    cursor: pointer;
-}

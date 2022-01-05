@@ -9,7 +9,7 @@ import Adoption from './pages/Adoption';
 import SignIn from './pages/SignIn';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:1337/graphql',
+  uri: 'https://khr-strapi.herokuapp.com/graphql',
   cache: new InMemoryCache()
 })
 
