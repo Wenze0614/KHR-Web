@@ -1,10 +1,13 @@
 import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup'
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { InputlArea } from '../ui/form-components';
 import Button from '../ui/Button';
 import styles from './SignInForm.module.css'
 import Card from '../ui/Card'
+import { useMutation, DocumentNode, gql } from "@apollo/client";
+import AuthContext from '../../store/auth-context';
+import { useNavigate } from 'react-router-dom';
 type logInProps = {
     email: string,
     password: string,
@@ -12,7 +15,28 @@ type logInProps = {
     name:string
 }
 const SignInForm = () => {
-
+    const [isValid, setValid] = useState(true)
+    const authCtx = useContext(AuthContext)
+    const SIGNUP_USER = gql`
+    mutation signup($username:String!,$email: String!, $password:String!) {
+        register(input:{
+            username:$username,
+            email:$email,
+            password:$password
+          }) 
+            {
+                jwt,
+                user{
+                  id,
+                  username
+            }
+              }
+    }
+    `;
+    const [signup, {loading }] = useMutation(SIGNUP_USER);
+    const navigate = useNavigate()
+   
+    if (loading) return <p>Is Loading</p>;
     return (
         <Card className='signInForm-card' >
             <Formik
@@ -31,6 +55,20 @@ const SignInForm = () => {
                 })}
                 onSubmit={(values: logInProps, { setSubmitting }: FormikHelpers<logInProps>) => {
                     console.log(values)
+                    signup({
+                        variables: {
+                            username:values.name,
+                            email: values.email,
+                            password: values.password
+                        }
+                    }).then(
+                        ({data})=>{
+                            console.log(data)
+                            setValid(true)
+                            authCtx.login(data.register.jwt, data.register.user)
+                            navigate('/',{replace:true})
+                        }
+                    ).catch(e=>{console.log(e);setValid(false); })
                 }}
             >
                 {/* <form className={styles['signIn-form']}>
@@ -43,6 +81,7 @@ const SignInForm = () => {
                 {formik => {
                     return (
                         < form className={styles['signIn-form']} onSubmit={(e)=>{e.preventDefault(); formik.handleSubmit()}} >
+                            {isValid ? null: <span className={styles.error}>Invalid Email or email has been used</span>}
                             <p>Enter your email and password to login</p>
                             <InputlArea label='Name' className='text-input' name='name' type='text' placeholder=''></InputlArea>
                             <InputlArea label='Email' className='text-input' name='email' type='email' placeholder=''></InputlArea>
