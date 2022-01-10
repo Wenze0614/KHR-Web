@@ -8,6 +8,7 @@ import Card from '../ui/Card'
 import { useMutation, DocumentNode, gql } from "@apollo/client";
 import AuthContext from '../../store/auth-context';
 import { useNavigate } from 'react-router-dom';
+import FlashMessage from '../ui/FlashMessage';
 type logInProps = {
     email: string,
     password: string,

@@ -3,3 +3,14 @@
     color:#FD6262;
     cursor:text;
 }
+
+
+.signIn-form span{
+    color:#5271BB;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.signIn-form span:hover{
+    color:#FD6262;
+}

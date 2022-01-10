@@ -18,7 +18,7 @@ import ResetPassword from './pages/ResetPassword';
 
 
 const client = new ApolloClient({
-  uri: 'http://localhost:1337/graphql',
+  uri: 'https://khr-strapi.herokuapp.com/graphql',
   cache: new InMemoryCache()
 })
 

@@ -60,13 +60,12 @@ const ResetPasswordForm = () => {
                             ({data})=>{
                                 console.log(data)
                                 setValid(true);
-                                if(!authCtx.isLoggedIn) authCtx.login(data.login.jwt, data.login.user)
+                                if(!authCtx.isLoggedIn) authCtx.login(data.resetPassword.jwt, data.resetPassword.user)
                                 navigate('/',{replace:true})
                             }
                         ).catch(e=>{setValid(false); })
                 }
                 }
-                onClick={()=>{}}
             >
                 {formik => {
                     return (
