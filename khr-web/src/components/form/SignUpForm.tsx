@@ -9,6 +9,7 @@ import { useMutation, DocumentNode, gql } from "@apollo/client";
 import AuthContext from '../../store/auth-context';
 import { useNavigate } from 'react-router-dom';
 import FlashMessage from '../ui/FlashMessage';
+import Alert from '@mui/material/Alert';
 type logInProps = {
     email: string,
     password: string,
@@ -46,7 +47,7 @@ const SignInForm = () => {
                     name:Yup.string().required(),
                     email: Yup.string().email("please enter a valid email").required('email is required'),
                     password: Yup.string().required("password is required"),
-                    reEnterPassword: Yup.string().when("password", {
+                    reEnterPassword: Yup.string().required("please confirm your password").when("password", {
                         is: (val: string) => (val && val.length > 0 ? true : false),
                         then: Yup.string().oneOf(
                             [Yup.ref("password")],
@@ -82,7 +83,7 @@ const SignInForm = () => {
                 {formik => {
                     return (
                         < form className={styles['signIn-form']} onSubmit={(e)=>{e.preventDefault(); formik.handleSubmit()}} >
-                            {isValid ? null: <span className={styles.error}>Invalid Email or email has been used</span>}
+                            {isValid ? null: <Alert severity="error">Invalid Email or email has been used</Alert>}
                             <p>Enter your email and password to login</p>
                             <InputlArea label='Name' className='text-input' name='name' type='text' placeholder=''></InputlArea>
                             <InputlArea label='Email' className='text-input' name='email' type='email' placeholder=''></InputlArea>

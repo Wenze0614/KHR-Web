@@ -9,6 +9,7 @@ import Card from '../ui/Card'
 import AuthContext from '../../store/auth-context';
 import { useNavigate } from 'react-router-dom';
 import FlashMessage, { FlashType } from '../ui/FlashMessage';
+import Alert from '@mui/material/Alert';
 type logInProps = {
     email: string,
     password: string
@@ -97,7 +98,7 @@ const SignInForm = () => {
                 {formik => {
                     return (
                         <form className={styles['signIn-form']} onSubmit={(e) => { e.preventDefault(); formik.handleSubmit() }}>
-                            {isValid ? null : <span className={styles.error}>Invalid email or password, try again</span>}
+                            {isValid ? null : <Alert severity="error">Invalid email or password, try again</Alert>}
                             <p>Enter your email and password to login</p>
                             <InputlArea label='Email' className='text-input' name='email' type='email' placeholder=''></InputlArea>
                             {formik.values.email ? <p>Forget your password? Click <span onClick={handleFprgetPassword.bind(null, formik.values.email)}>here</span> to reset</p> : null}
