@@ -4,7 +4,7 @@ import { Horse } from "../../pages/Adoption";
 import Card from "../ui/Card";
 import styles from './Blog.module.css'
 import ReactPaginate from "react-paginate";
-
+import CircularProgress from '@mui/material/CircularProgress';
 interface BlogProps {
     className: string,
     queryFor: string,
@@ -18,7 +18,7 @@ const Blog = (props: BlogProps) => {
     const { loading, error, data } = useQuery(props.query)
     const [currPageNumber, setCurrPageNumber] = useState(0)
 
-    if (loading) return <p>loading</p>
+    if (loading) return <p>loading <CircularProgress color="inherit" /></p>
     if (error) return <p>error :(</p>
     const requiredData = data[props.queryFor].data;
     const visitedPages = props.blogsPerPage * currPageNumber;

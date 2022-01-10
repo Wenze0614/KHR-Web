@@ -10,6 +10,7 @@ import AuthContext from '../../store/auth-context';
 import { useNavigate } from 'react-router-dom';
 import FlashMessage, { FlashType } from '../ui/FlashMessage';
 import Alert from '@mui/material/Alert';
+import CircularProgress from '@mui/material/CircularProgress';
 type logInProps = {
     email: string,
     password: string
@@ -46,7 +47,7 @@ const SignInForm = () => {
     const [login, { loading }] = useMutation(LOGIN_USER);
     const [forgetPassword] = useMutation(FORGET_PASSWORD)
     const navigate = useNavigate();
-    if (loading) return <p>Is Loading</p>;
+    if (loading) return <p>Loading <CircularProgress color="inherit" /></p>;
     // if (error) { console.log("invalid user");};
     const handleFprgetPassword = (email: string) => {
         forgetPassword({
@@ -65,7 +66,7 @@ const SignInForm = () => {
             }
         ).catch(e => {
             console.log("reset password email sent fail")
-            setFlashContent({message:'Email sent failed. Please check your email and try again.',type:'error'})
+            setFlashContent({ message: 'Email sent failed. Please check your email and try again.', type: 'error' })
             setShowFlash(true)
             setTimeout(() => { setShowFlash(false) }, 3000)
         })
