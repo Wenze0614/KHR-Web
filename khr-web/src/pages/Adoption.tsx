@@ -3,6 +3,7 @@ import React from 'react'
 import Blog from '../components/blog/Blog';
 import Strip from '../components/strip/Strip';
 import styles from './Adoption.module.css'
+
 export type Horse = {
   id: string
   attributes: {
