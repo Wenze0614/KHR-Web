@@ -28,7 +28,7 @@ const Blog = (props: BlogProps) => {
         if (props.queryFor === 'horses') {
             return (
                 <li key={item.id}>
-                    <Card className="horse-card" backgroundImg = {item.attributes.image.data.length > 0? `https://khr-strapi.herokuapp.com${item.attributes.image.data[0].attributes.url}`:undefined}>
+                    <Card className="horse-card" backgroundImg = {item.attributes.image.data.length > 0? `${item.attributes.image.data[0].attributes.url}`:undefined}>
                         {/* <label>{item.id}</label> */}
                         <h2>{item.attributes.name}</h2>
                         <p>{`${item.attributes.description.substring(0, 100)}...`}</p>

@@ -11,16 +11,16 @@ import Profile from './pages/Profile';
 import AuthContext from './store/auth-context';
 import ResetPassword from './pages/ResetPassword';
 
-// const client = new ApolloClient({
-//   uri: 'https://khr-strapi.herokuapp.com/graphql',
-//   cache: new InMemoryCache()
-// })
-
-
 const client = new ApolloClient({
   uri: 'https://khr-strapi.herokuapp.com/graphql',
   cache: new InMemoryCache()
 })
+
+
+// const client = new ApolloClient({
+//   uri: 'http://localhost:1337/graphql',
+//   cache: new InMemoryCache()
+// })
 
 function App() {
   const authCtx = useContext(AuthContext)

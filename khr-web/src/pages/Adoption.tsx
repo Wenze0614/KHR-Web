@@ -42,7 +42,7 @@ export default function Adoption() {
     `
   return (
     <div className={styles.adoption}>
-      <Strip background="home/home-1.jpg">Adoption</Strip>
+      <Strip background="adoption/farm.png">Adoption</Strip>
       <Strip background="home/home-2.jpg">Adoption</Strip>
       <Strip background="home/home-3.png" darkness='0.3'>
         <h2>Our Horses</h2>
