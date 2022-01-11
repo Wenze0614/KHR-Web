@@ -26,6 +26,7 @@ export default function FlashMessage(props: FlashMessageProps) {
 
     const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
+            setOpen(false);
             return;
         }
 

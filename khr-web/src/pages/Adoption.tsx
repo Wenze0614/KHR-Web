@@ -2,7 +2,14 @@ import { gql } from '@apollo/client';
 import React from 'react'
 import Blog from '../components/blog/Blog';
 import Strip from '../components/strip/Strip';
+import MySwiper from '../components/ui/MySwiper';
 import styles from './Adoption.module.css'
+
+type ImageData = {
+  attributes:{
+    url:string
+  }
+}
 
 export type Horse = {
   id: string
@@ -10,13 +17,7 @@ export type Horse = {
     name: string,
     description: string,
     image: {
-      data: [
-        {
-          attributes: {
-            url: string
-          }
-        }
-      ]
+      data: ImageData[]
     }
   }
 }

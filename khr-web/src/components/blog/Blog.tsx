@@ -11,8 +11,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Backdrop from '@mui/material/Backdrop';
+
 import HorseDetail from "../backdrop/HorseDetail";
+import MyBackDrop from "../ui/MyBackDrop";
 interface BlogProps {
     className: string,
     queryFor: string,
@@ -28,7 +29,7 @@ const Blog = (props: BlogProps) => {
     const [selectedHorse, setSelectedHorse] = useState<Horse>()
     const [open, setOpen] = useState(false)
 
-    const handleClose = () =>{
+    const handleClose = () => {
         setOpen(false)
     }
     if (loading) return <p>loading <CircularProgress color="inherit" /></p>
@@ -63,7 +64,7 @@ const Blog = (props: BlogProps) => {
                         </CardContent>
                         <CardActions>
                             {/* <Button size="small">Share</Button> */}
-                            <Button size="small" onClick={() => {setSelectedHorse(item);setOpen(true) }}>Learn More</Button>
+                            <Button size="small" onClick={() => { setSelectedHorse(item); setOpen(true) }}>Learn More</Button>
                         </CardActions>
                     </Card>
                 </li>)
@@ -75,13 +76,9 @@ const Blog = (props: BlogProps) => {
     }
     return (
         <div className={styles[props.className]}>
-            <Backdrop
-                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                open={open}
-                onClick={handleClose}
-            >
-                <HorseDetail  selectedHorse = {selectedHorse}></HorseDetail>
-            </Backdrop>
+            <MyBackDrop open={open} onClose={handleClose} className='horse-detail-container'>
+                <HorseDetail selectedHorse={selectedHorse}></HorseDetail>
+            </MyBackDrop>
             <ul className={styles.blogs}>
                 {displayBlogs}
             </ul>
