@@ -25,7 +25,7 @@ const Blog = (props: BlogProps) => {
     console.log('calling blog')
     const { loading, error, data } = useQuery(props.query)
     const [currPageNumber, setCurrPageNumber] = useState(0)
-    const [horseId, setHorseId] = useState('0')
+    const [selectedHorse, setSelectedHorse] = useState<Horse>()
     const [open, setOpen] = useState(false)
 
     const handleClose = () =>{
@@ -63,7 +63,7 @@ const Blog = (props: BlogProps) => {
                         </CardContent>
                         <CardActions>
                             {/* <Button size="small">Share</Button> */}
-                            <Button size="small" onClick={() => {setHorseId(item.id);setOpen(true) }}>Learn More</Button>
+                            <Button size="small" onClick={() => {setSelectedHorse(item);setOpen(true) }}>Learn More</Button>
                         </CardActions>
                     </Card>
                 </li>)
@@ -80,7 +80,7 @@ const Blog = (props: BlogProps) => {
                 open={open}
                 onClick={handleClose}
             >
-                <HorseDetail id={horseId}></HorseDetail>
+                <HorseDetail  selectedHorse = {selectedHorse}></HorseDetail>
             </Backdrop>
             <ul className={styles.blogs}>
                 {displayBlogs}
