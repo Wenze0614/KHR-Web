@@ -3,13 +3,18 @@
     top: 0;
     left: 0;
     width: 100%;
+    max-height: 200px;
     padding: 30px 15%;
     display: flex;
     justify-content: space-between;
     align-content: flex-start;
     z-index: 100;
+    transition: all 0.3s ease-out;
 }
-
+.header.hide{
+    opacity: 0;
+    top: -200px;
+}
 .logo{
     position: relative;
     top:0;
