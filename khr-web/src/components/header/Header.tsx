@@ -5,38 +5,16 @@ const Header = () => {
     const [show, setShow] = useState(true)
     const [prevOffSet, setPrevOffSet] = useState(window.scrollY)
     const handleScroll = () => {
-        console.log(window.pageYOffset)
         setPrevOffSet(PrevOffSet => {
             if (PrevOffSet > window.scrollY) {
-                console.log('scroll up')
                 setShow(true)
             } else {
-                console.log('scroll down')
                 setShow(false)
             }
             return window.scrollY
         })
-        // if (window.scrollY > currOffSet) {
-        //     setShow(false)
-        // } else {
-        //     console.log('scroll up')
-        //     setShow(true)
-
-        // }
-
-
     }
-    //  useEffect(() => {
-    //     console.log(currOffSet)
-    //     if (window.scrollY > currOffSet) {
-    //         setShow(false)
-    //     } else {
-    //         console.log('scroll up')
-    //         setShow(true)
 
-    //     }
-    //     setCurrOffSet(window.scrollY)
-    // }, [currOffSet])
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
         return () => {

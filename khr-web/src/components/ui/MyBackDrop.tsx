@@ -21,6 +21,7 @@ export default function MyBackDrop(props: { children: ReactNode, open: boolean, 
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             onBackdropClick={() => { props.onClose() }}
+            className={styles.myModal}
         >
             <div className={styles[props.className]}>
                 {props.children}

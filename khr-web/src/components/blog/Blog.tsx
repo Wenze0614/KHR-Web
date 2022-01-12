@@ -59,7 +59,7 @@ const Blog = (props: BlogProps) => {
                                 {item.attributes.name}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                                {`${item.attributes.description.substring(0, 100)}...`}
+                                {`${item.attributes.description.substring(0, 50)}...`}
                             </Typography>
                         </CardContent>
                         <CardActions>

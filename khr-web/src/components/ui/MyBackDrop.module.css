@@ -1,9 +1,13 @@
+.myModal{
+    overflow: scroll;
+}
 .horse-detail-container{
     position: relative;
     top:10%;
-    left:calc(45%/2);
-    width: 55vw;
-    height: 80vh;
+    left:10%;
+    width: 80vw;
+    height: auto;
     border-radius: 6px;
     background-color: white;
+    border-radius: 6px;
 }
