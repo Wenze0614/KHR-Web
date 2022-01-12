@@ -79,9 +79,6 @@ const Blog = (props: BlogProps) => {
             <MyBackDrop open={open} onClose={handleClose} className='horse-detail-container'>
                 <HorseDetail selectedHorse={selectedHorse}></HorseDetail>
             </MyBackDrop>
-            <ul className={styles.blogs}>
-                {displayBlogs}
-            </ul>
             <ReactPaginate
                 previousLabel={"<"}
                 nextLabel={">"}
@@ -92,6 +89,10 @@ const Blog = (props: BlogProps) => {
                 nextLinkClassName={styles.nextButton}
                 disabledClassName={styles.paginationDisable}
                 activeClassName={styles.paginationActive}></ReactPaginate>
+            <ul className={styles.blogs}>
+                {displayBlogs}
+            </ul>
+
         </div>
     )
 }

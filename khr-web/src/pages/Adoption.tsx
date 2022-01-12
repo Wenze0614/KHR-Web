@@ -16,6 +16,7 @@ export type Horse = {
   attributes: {
     name: string,
     description: string,
+    publishedAt:string,
     image: {
       data: ImageData[]
     }
@@ -30,6 +31,7 @@ export default function Adoption() {
             attributes{
               name,
               description,
+              publishedAt,
               image{
                 data{
                   attributes{
