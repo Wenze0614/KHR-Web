@@ -11,6 +11,8 @@ import Profile from './pages/Profile';
 import AuthContext from './store/auth-context';
 import ResetPassword from './pages/ResetPassword';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Donation from './pages/Donation';
+import Sponsor from './pages/Sponsor';
 const client = new ApolloClient({
   uri: 'https://khr-strapi.herokuapp.com/graphql',
   cache: new InMemoryCache()
@@ -39,6 +41,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/adoption' element={<Adoption />}></Route>
+          <Route path='/donation' element={<Donation/>}></Route>
+          <Route path='/sponsorship' element={<Sponsor/>}></Route>
           {!authCtx.isLoggedIn && <Route path='/signIn' element={<SignIn />}></Route>}
           {authCtx.isLoggedIn && <Route path='/profile' element={<Profile />}></Route>}
           <Route path="/resetPassword" element={<ResetPassword></ResetPassword>}></Route>
