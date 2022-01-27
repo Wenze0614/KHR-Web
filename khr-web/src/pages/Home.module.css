@@ -22,9 +22,16 @@
 }
 
 .service-wraper a{
-    color: white;
+    color:white;
 }
 
 .service-wraper a:hover{
     color:#FD6262;
+}
+
+@media (max-width:1200px){
+    .service-wraper{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

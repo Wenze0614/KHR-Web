@@ -10,6 +10,7 @@
     align-content: flex-start;
     z-index: 100;
     transition: all 0.3s ease-out;
+
 }
 .header.hide{
     opacity: 0;
@@ -20,4 +21,18 @@
     top:0;
     max-width: 220px;
     max-height: 80px;
+}
+
+@media (max-width:1200px){
+    .header{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        width: 100%;
+        /* background-color: rgba(0, 0, 0, 0.3); */
+    }
+    .logo{
+        max-width: 30%;
+        margin: auto;
+    }
 }

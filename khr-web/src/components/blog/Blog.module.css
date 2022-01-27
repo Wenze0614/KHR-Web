@@ -14,8 +14,10 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap; */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
+    display: flex;
+    flex-wrap: wrap;
     grid-gap:20px;
     align-items: center;
     justify-content: center;
@@ -25,8 +27,8 @@
 
 .horses-blog .blogs li{
     position: relative;
-    width: 30vh;
-    height: 30vh;
+    /* width: 30vh;
+    height: 30vh; */
     list-style: none;
     margin-bottom: 30px;
 
@@ -77,3 +79,19 @@
     color: tomato;
 }
 
+@media (max-width:1200px) {
+    .blogs{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* @media (max-height:500px) {
+    .blogs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+} */
