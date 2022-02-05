@@ -1,5 +1,6 @@
 import { useQuery, DocumentNode } from "@apollo/client";
-import { useState } from "react";
+import { gql } from '@apollo/client';
+import { useState, useEffect} from "react";
 import { Horse } from "../../pages/Adoption";
 // import Card from "../ui/Card";
 import styles from './Blog.module.css'
@@ -14,6 +15,7 @@ import Button from '@mui/material/Button';
 
 import HorseDetail from "../backdrop/HorseDetail";
 import MyBackDrop from "../ui/MyBackDrop";
+import usePageCount from "../hooks/usePageCount";
 interface BlogProps {
     className: string,
     queryFor: string,
@@ -22,9 +24,42 @@ interface BlogProps {
     blogsPerPage: number
 }
 
+
+const getPage = (page: number) => {
+    return gql`
+    query getHorses{
+        horses(pagination:{pageSize:8, page:${page}}){
+          data{
+            id,
+            attributes{
+              name,
+              description,
+              publishedAt,
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+}
 const Blog = (props: BlogProps) => {
     console.log('calling blog')
-    const { loading, error, data } = useQuery(props.query)
+
+    // useEffect(() => {
+    //     const { loading, error, data } = useQuery(getPageInfo)
+    //     // if (loading) return <p>loading <CircularProgress color="inherit" /></p>
+    //     // if (error) return <p>error :(</p>
+    //     setPageCounts(data[props.queryFor].meta.pagination.pageCount)
+    // }, [])
+    // const {  data } = useQuery(getPageInfo)
+
+    const pageCounts = usePageCount({queryFor:props.queryFor})
     const [currPageNumber, setCurrPageNumber] = useState(0)
     const [selectedHorse, setSelectedHorse] = useState<Horse>()
     const [open, setOpen] = useState(false)
@@ -32,21 +67,21 @@ const Blog = (props: BlogProps) => {
     const handleClose = () => {
         setOpen(false)
     }
+
+
+    // const pageCounts = data[props.queryFor].meta.pagination.pageCount;
+    // const requiredData = data[props.queryFor].data;
+    // const visitedPages = props.blogsPerPage * currPageNumber;
+    // const pageCounts = Math.ceil(requiredData.length / props.blogsPerPage)
+    // console.log(requiredData)
+    const { loading, error, data } = useQuery(getPage(currPageNumber+1))
     if (loading) return <p>loading <CircularProgress color="inherit" /></p>
     if (error) return <p>error :(</p>
     const requiredData = data[props.queryFor].data;
-    const visitedPages = props.blogsPerPage * currPageNumber;
-    const pageCounts = Math.ceil(requiredData.length / props.blogsPerPage)
-    console.log(requiredData)
-    const displayBlogs = requiredData.slice(visitedPages, visitedPages + props.blogsPerPage).map((item: Horse) => {
+    const displayBlogs = requiredData.map((item:Horse) => {
         if (props.queryFor === 'horses') {
             return (
                 <li key={item.id}>
-                    {/* <Card className="horse-card" backgroundImg = {item.attributes.image.data.length > 0? `${item.attributes.image.data[0].attributes.url}`:undefined}>
-                         <label>{item.id}</label> 
-                        <h2>{item.attributes.name}</h2>
-                        <p>{`${item.attributes.description.substring(0, 100)}...`}</p>
-                    </Card> */}
                     <Card sx={{ maxWidth: 345 }}>
                         <CardMedia
                             component="img"
@@ -68,10 +103,13 @@ const Blog = (props: BlogProps) => {
                         </CardActions>
                     </Card>
                 </li>)
+        }else{
+            return <></>
         }
     })
 
     const handlePageChange = (seletedItem: { selected: number }) => {
+        console.log("selected:", seletedItem.selected)
         setCurrPageNumber(seletedItem.selected)
     }
     return (
@@ -83,6 +121,8 @@ const Blog = (props: BlogProps) => {
                 previousLabel={"<"}
                 nextLabel={">"}
                 pageCount={pageCounts}
+                // initialPage={currPageNumber}
+                forcePage={currPageNumber}
                 onPageChange={handlePageChange}
                 containerClassName={styles.pagination}
                 previousLinkClassName={styles.previousButton}
