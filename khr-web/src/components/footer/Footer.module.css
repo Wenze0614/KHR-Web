@@ -1,9 +1,10 @@
 .footer{
     position: relative;
     width: 100%;
-    height: 40vh;
+    height: auto;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -14,4 +15,65 @@
     left: 0;
     filter: brightness(30%);
 
+}
+
+.logo{
+    position: relative;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0px 40px; */
+}
+
+.KHR-logo{
+    position: relative;
+    width: 50%;
+}
+
+.ACNC-logo{
+    position: relative;
+    width: 20%;
+}
+.contact{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+
+}
+.contact p{
+    /* position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center; */
+}
+.contact span{
+    text-decoration: underline;
+    font-weight: 300;
+    margin-left: 30PX;
+}
+
+@media (max-width:600px){
+    .footer{
+        flex-wrap: wrap;
+    }
+    .contact{
+        flex-wrap: wrap;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .contact P{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .logo{
+        width: 50%;
+    }
 }
