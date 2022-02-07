@@ -5,7 +5,7 @@ import styles from './Footer.module.css'
 const Footer = () => {
     return (
         <footer className={styles.footer}>
-            <img src={require('../../assets/home/home-3.png')} alt=''></img>
+            <img src={require('../../assets/home/home-4.png')} alt=''></img>
             <div className={styles.logo}>
                 <img className={styles['KHR-logo']} src={require('../../assets/logo.png')} alt='KHR-logo'></img>
                 <img className={styles['ACNC-logo']} src={require('../../assets/ACNC-logo.png')} alt='ACNC-logo'></img>

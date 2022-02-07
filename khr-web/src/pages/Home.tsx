@@ -7,7 +7,7 @@ const Home = () => {
     console.log('home')
     return (
         <div className={styles.home}>
-            <Strip background="home/home-1.jpg" darkness='0.3'>
+            <Strip background="home/home-1.jpg" darkness='0.4'>
                 <h1>Kalina Horse Rescue</h1>
                 <p>Our mission is to rescue, rehabilitate and re-home horses</p>
             </Strip>
@@ -17,7 +17,7 @@ const Home = () => {
                 <p>Kalina Horse Rescue is a specialist equine service we, rescue, rehabilitate, re-home, and retire horses.</p>
                 <p>We help horses from Perth metro and regional areas.</p>
             </Strip>
-            <Strip background="home/home-3.png" darkness='0.3'>
+            <Strip background="home/home-3.jpg" darkness='0.6'>
                 {/* <h2>Our Services</h2> */}
                 <div className={styles['service-wraper']}>
                     <Card className="service-card" backgroundImg={require('../assets/home/home-1.jpg')}>
@@ -35,7 +35,7 @@ const Home = () => {
                             <Link to="/sponsorship">Learn More</Link></p>
 
                     </Card>
-                    <Card className="service-card" backgroundImg={require('../assets/home/home-3.png')}>
+                    <Card className="service-card" backgroundImg={require('../assets/home/home-3.jpg')}>
                         <h3>Adoption</h3>
                         <p>All horses are adopted on a lifetime lease contract.
                             All adoption fees are donations to KHS, and no profit is made on the adoption of horses, all donations ensure KHS can continue our work to help horses in need.

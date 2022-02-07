@@ -1,6 +1,6 @@
 import { useQuery, DocumentNode } from "@apollo/client";
 import { gql } from '@apollo/client';
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { Horse } from "../../pages/Adoption";
 // import Card from "../ui/Card";
 import styles from './Blog.module.css'
@@ -59,7 +59,7 @@ const Blog = (props: BlogProps) => {
     // }, [])
     // const {  data } = useQuery(getPageInfo)
 
-    const pageCounts = usePageCount({queryFor:props.queryFor})
+    const pageCounts = usePageCount({ queryFor: props.queryFor })
     const [currPageNumber, setCurrPageNumber] = useState(0)
     const [selectedHorse, setSelectedHorse] = useState<Horse>()
     const [open, setOpen] = useState(false)
@@ -74,11 +74,12 @@ const Blog = (props: BlogProps) => {
     // const visitedPages = props.blogsPerPage * currPageNumber;
     // const pageCounts = Math.ceil(requiredData.length / props.blogsPerPage)
     // console.log(requiredData)
-    const { loading, error, data } = useQuery(getPage(currPageNumber+1))
+    const { loading, error, data } = useQuery(getPage(currPageNumber + 1))
     if (loading) return <p>loading <CircularProgress color="inherit" /></p>
     if (error) return <p>error :(</p>
-    const requiredData = data[props.queryFor].data;
-    const displayBlogs = requiredData.map((item:Horse) => {
+    const requiredData = data[props.queryFor].data as Horse[];
+    console.log(requiredData.length)
+    const displayBlogs = requiredData.map((item: Horse) => {
         if (props.queryFor === 'horses') {
             return (
                 <li key={item.id}>
@@ -103,7 +104,7 @@ const Blog = (props: BlogProps) => {
                         </CardActions>
                     </Card>
                 </li>)
-        }else{
+        } else {
             return <></>
         }
     })
@@ -117,21 +118,25 @@ const Blog = (props: BlogProps) => {
             <MyBackDrop open={open} onClose={handleClose} className='horse-detail-container'>
                 <HorseDetail selectedHorse={selectedHorse}></HorseDetail>
             </MyBackDrop>
-            <ReactPaginate
-                previousLabel={"<"}
-                nextLabel={">"}
-                pageCount={pageCounts}
-                // initialPage={currPageNumber}
-                forcePage={currPageNumber}
-                onPageChange={handlePageChange}
-                containerClassName={styles.pagination}
-                previousLinkClassName={styles.previousButton}
-                nextLinkClassName={styles.nextButton}
-                disabledClassName={styles.paginationDisable}
-                activeClassName={styles.paginationActive}></ReactPaginate>
-            <ul className={styles.blogs}>
-                {displayBlogs}
-            </ul>
+            {requiredData.length > 0 ?
+                <>
+                    <ReactPaginate
+                        previousLabel={"<"}
+                        nextLabel={">"}
+                        pageCount={pageCounts}
+                        // initialPage={currPageNumber}
+                        forcePage={currPageNumber}
+                        onPageChange={handlePageChange}
+                        containerClassName={styles.pagination}
+                        previousLinkClassName={styles.previousButton}
+                        nextLinkClassName={styles.nextButton}
+                        disabledClassName={styles.paginationDisable}
+                        activeClassName={styles.paginationActive}></ReactPaginate>
+                    <ul className={styles.blogs}>
+                        displayBlogs
+                    </ul>
+                </>
+                : <p>(Data will be uploaded very soon:)</p>}
 
         </div>
     )

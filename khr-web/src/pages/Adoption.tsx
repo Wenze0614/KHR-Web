@@ -46,14 +46,14 @@ export default function Adoption() {
     `
   return (
     <div className={styles.adoption}>
-      <Strip background="adoption/farm.png" darkness='0.2'>
+      <Strip background="adoption/adoption-1.png" darkness='0.2'>
         <h1>Adoption</h1>
         <p style={{ fontSize: '1.5rem', textAlign: 'center' }}>Find Horse A Home</p>
         <p style={{fontSize:"0.8rem"}}> (Click to download adoption application form)</p>
         <Button type='button'><a href='../../assets/form/Adoption-Application.pdf' download>Download</a></Button>
       </Strip>
       {/* <Strip background="home/home-2.jpg">Adoption</Strip> */}
-      <Strip  background="home/home-2.jpg">
+      <Strip  background="adoption/adoption-2.jpg" darkness='0.5'>
         {/* <p style={{ fontSize: '1.5rem', textAlign: 'center',whiteSpace:'pre-line' }}>
           All horses are adopted on a lifetime lease contract. 
           Adoption fees vary, from $250 to $2500, depending on the care and treatment the horses have received on their road to recovery. 
@@ -67,7 +67,7 @@ export default function Adoption() {
         <p>If the new owners can no longer care for the horses they must be returned to KHR, the horses must not be sold on or given away. </p>
         <p>For all enquiries and expressions of interest in adopting a horse please contact us via email, our contact form or call us on 0411 053 853 </p>
       </Strip>
-      <Strip background="home/home-3.png" darkness='0.3'>
+      <Strip background="adoption/adoption-3.jpeg" darkness='0.3'>
         <h2>Our Horses</h2>
         <Blog query={getHorse} queryFor='horses' className='horses-blog' blogsPerPage={8}></Blog>
       </Strip>
