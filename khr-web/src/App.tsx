@@ -6,11 +6,10 @@ import Header from './components/header/Header';
 import Home from './pages/Home'
 import Footer from './components/footer/Footer';
 import Adoption from './pages/Adoption';
-import SignIn from './pages/SignIn';
-import Profile from './pages/Profile';
-import AuthContext from './store/auth-context';
-import ResetPassword from './pages/ResetPassword';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import SignIn from './pages/SignIn';
+// import Profile from './pages/Profile';
+// import AuthContext from './store/auth-context';
+// import ResetPassword from './pages/ResetPassword';
 import Donation from './pages/Donation';
 import Sponsor from './pages/Sponsor';
 
@@ -26,17 +25,9 @@ const client = new ApolloClient({
 // })
 
 function App() {
-  const authCtx = useContext(AuthContext)
-  const theme = createTheme({
-    typography: {
-      fontFamily: [
-        'Poppins', 'sans-serif'
-      ].join(','),
-    },
-  })
+  // const authCtx = useContext(AuthContext)
   return (
     <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
       <div className="App">
         <Header></Header>
         <a className={styles["vol-button"]} href='/assets/form/Volunteer-Application.pdf' download>Apply for volunteer</a>
@@ -52,7 +43,6 @@ function App() {
         </Routes>
         <Footer></Footer>
       </div>
-      </ThemeProvider>
     </ApolloProvider>
   );
 }

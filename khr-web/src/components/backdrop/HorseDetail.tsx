@@ -3,7 +3,6 @@ import MySwiper from '../ui/MySwiper'
 import styles from './HorseDetail.module.css'
 import { SwiperSlide } from "swiper/react";
 import { Horse } from '../../pages/Adoption';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 export default function HorseDetail(props: { selectedHorse?: Horse }) {
