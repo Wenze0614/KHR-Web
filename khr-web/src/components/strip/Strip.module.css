@@ -49,6 +49,7 @@
 }
 
 @media (max-width:1200px) {
+
     .strip-content>h1,
     .strip-content>h2 {
         font-size: 1.5rem;
