@@ -58,4 +58,7 @@
     .strip-content>p {
         font-size: 1rem;
     }
+    .strip{
+        background-size: auto 100%;
+    }
 }

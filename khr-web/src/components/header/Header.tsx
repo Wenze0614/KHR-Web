@@ -11,6 +11,9 @@ const Header = () => {
             } else {
                 setShow(false)
             }
+            if(window.scrollY === 0){
+                setShow(true)
+            }
             return window.scrollY
         })
     }
