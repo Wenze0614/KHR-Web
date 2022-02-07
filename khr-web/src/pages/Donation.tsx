@@ -7,6 +7,7 @@ export default function Donation() {
         <Strip background='home/home-3.png' darkness='0.3'>
             <h1>Help Us</h1>
             <p>Give the horses love, care, and a safe home</p>
+            <p style={{fontSize:"0.8rem"}}>(Donation will be available very soon)</p>
             <Button type='button'>Donate</Button>
         </Strip>
     )
