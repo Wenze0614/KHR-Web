@@ -12,6 +12,7 @@
     transition: all .3s ease-out;
     margin: auto;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 .content{
     position: relative;
