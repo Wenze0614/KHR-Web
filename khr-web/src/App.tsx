@@ -12,7 +12,6 @@ import Adoption from './pages/Adoption';
 // import ResetPassword from './pages/ResetPassword';
 import Donation from './pages/Donation';
 import Sponsor from './pages/Sponsor';
-
 const client = new ApolloClient({
   uri: 'https://khr-strapi.herokuapp.com/graphql',
   cache: new InMemoryCache()
@@ -30,7 +29,7 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <Header></Header>
-        <a className={styles["vol-button"]} href='/assets/form/Volunteer-Application.pdf' download>Apply for volunteer</a>
+        <a className={styles["vol-button"]} href='Volunteer-Application.pdf' download="volunteer-form.pdf">Apply for volunteer</a>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/adoption' element={<Adoption />}></Route>
