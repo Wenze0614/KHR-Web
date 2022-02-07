@@ -12,6 +12,15 @@
 }
 
 .myButton:hover{
-    color:#5782BB;
     background-color: white;
 }
+
+.content *{
+    color: white;
+    text-decoration: none;
+}
+
+.myButton:hover .content *{
+    color:#5782BB;
+}
+

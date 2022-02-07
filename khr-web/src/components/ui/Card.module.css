@@ -38,10 +38,10 @@
     top: -30px;
     left: -30px;
     transform: rotate(-45deg);
-    /* background-color: white; */
+    background-color: white;
     border: 1px solid white;
-    /* color:#FD6262; */
-    color: white;
+    /* color: white; */
+    color:#5271BB;
     border-radius: 6px;
     padding: 3px;
     z-index: 1;

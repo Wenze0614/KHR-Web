@@ -1,0 +1,22 @@
+.vol-button{
+    position: fixed;
+    right: 0;
+    top: 20%;
+    z-index: 100;
+    background-color: transparent;
+    border: 1px solid white;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    padding: 10px 5px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    transition: all .3s ease-out;
+}
+
+.vol-button:hover{
+    background-color: white;
+    color:#5271BB;
+}
+

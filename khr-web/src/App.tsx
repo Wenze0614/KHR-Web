@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import './App.css';
+import { useContext } from 'react';
+import styles from './App.module.css';
 import { Route, Routes } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import Header from './components/header/Header';
@@ -13,6 +13,7 @@ import ResetPassword from './pages/ResetPassword';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Donation from './pages/Donation';
 import Sponsor from './pages/Sponsor';
+
 const client = new ApolloClient({
   uri: 'https://khr-strapi.herokuapp.com/graphql',
   cache: new InMemoryCache()
@@ -38,14 +39,15 @@ function App() {
       <ThemeProvider theme={theme}>
       <div className="App">
         <Header></Header>
+        <a className={styles["vol-button"]} href='/assets/form/Volunteer-Application.pdf' download>Apply for volunteer</a>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/adoption' element={<Adoption />}></Route>
           <Route path='/donation' element={<Donation/>}></Route>
           <Route path='/sponsorship' element={<Sponsor/>}></Route>
-          {!authCtx.isLoggedIn && <Route path='/signIn' element={<SignIn />}></Route>}
+          {/* {!authCtx.isLoggedIn && <Route path='/signIn' element={<SignIn />}></Route>}
           {authCtx.isLoggedIn && <Route path='/profile' element={<Profile />}></Route>}
-          <Route path="/resetPassword" element={<ResetPassword></ResetPassword>}></Route>
+          <Route path="/resetPassword" element={<ResetPassword></ResetPassword>}></Route> */}
           <Route path='*' element={<Home />}></Route>
         </Routes>
         <Footer></Footer>

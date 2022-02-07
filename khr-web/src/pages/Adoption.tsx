@@ -49,7 +49,8 @@ export default function Adoption() {
       <Strip background="adoption/farm.png" darkness='0.2'>
         <h1>Adoption</h1>
         <p style={{ fontSize: '1.5rem', textAlign: 'center' }}>Find Horse A Home</p>
-        <Button type='button'>Adopt Horse</Button>
+        <p style={{fontSize:"0.8rem"}}> (Click to download adoption application form)</p>
+        <Button type='button'><a href='../../assets/form/Adoption-Application.pdf' download>Download</a></Button>
       </Strip>
       {/* <Strip background="home/home-2.jpg">Adoption</Strip> */}
       <Strip  background="home/home-2.jpg">
