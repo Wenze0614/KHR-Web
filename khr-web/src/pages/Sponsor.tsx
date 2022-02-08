@@ -1,8 +1,8 @@
 import Strip from '../components/strip/Strip'
-import styles from './Sponsor.module.css'
+// import styles from './Sponsor.module.css'
 export default function Sponsor() {
     return (
-        <div className={styles.sponsor}>
+        <>
             <Strip background="sponsor/sponsor-1.jpg" darkness='0.3'>
                 <h1>Sponsorship</h1>
                 <p>You can help a horse through their recovery and rehabilitation. </p>
@@ -17,6 +17,6 @@ export default function Sponsor() {
                 <p>a pony is $15 a week,</p>
                 <p>a horse is $25 a week</p>
             </Strip>
-        </div>
+        </>
     )
 }

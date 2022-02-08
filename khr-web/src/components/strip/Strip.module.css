@@ -1,7 +1,9 @@
 .strip {
     position: relative;
     width: 100%;
-    height: auto;
+    min-height: 100%;
+    overflow: scroll;
+    /* height: auto; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +24,6 @@
 }
 
 .strip-content {
-    min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -58,7 +59,7 @@
     .strip-content>p {
         font-size: 1rem;
     }
-    .strip{
-        background-size: auto 100vh;
-    }
+    /* .strip{
+        background-size: auto 100%;
+    } */
 }

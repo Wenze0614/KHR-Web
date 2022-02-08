@@ -45,7 +45,7 @@ export default function Adoption() {
       }
     `
   return (
-    <div className={styles.adoption}>
+    <>
       <Strip background="adoption/adoption-1.png" darkness='0.2'>
         <h1>Adoption</h1>
         <p style={{ fontSize: '1.5rem', textAlign: 'center' }}>Find Horse A Home</p>
@@ -71,6 +71,6 @@ export default function Adoption() {
         <h2>Our Horses</h2>
         <Blog query={getHorse} queryFor='horses' className='horses-blog' blogsPerPage={8}></Blog>
       </Strip>
-    </div>
+    </>
   )
 }

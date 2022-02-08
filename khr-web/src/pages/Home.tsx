@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     console.log('home')
     return (
-        <div className={styles.home}>
+        <>
             <Strip background="home/home-1.jpg" darkness='0.4'>
                 <h1>Kalina Horse Rescue</h1>
                 <p>Our mission is to rescue, rehabilitate and re-home horses</p>
@@ -44,7 +44,7 @@ const Home = () => {
                     </Card>
                 </div>
             </Strip>
-        </div>
+        </>
     );
 };
 

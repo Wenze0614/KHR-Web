@@ -27,7 +27,7 @@ function App() {
   // const authCtx = useContext(AuthContext)
   return (
     <ApolloProvider client={client}>
-      <div className="App">
+      <div className={styles.app}>
         <Header></Header>
         <a className={styles["vol-button"]} href='Volunteer-Application.pdf' download="volunteer-form.pdf">Apply for volunteer</a>
         <Routes>
