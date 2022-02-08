@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     min-height: 100%;
-    overflow: scroll;
+    /* overflow: scroll; */
     /* height: auto; */
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
     align-items: center;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment:fixed;
     color: #fff;
     /* background-color: rgba(0, 0, 0, 0.5); */
 }
@@ -27,7 +27,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center center;
     align-items: center;
     z-index: 10;
     width: 90%;
@@ -59,7 +59,8 @@
     .strip-content>p {
         font-size: 1rem;
     }
-    /* .strip{
+    .strip{
         background-size: auto 100%;
-    } */
+        background-attachment: scroll;
+    }
 }
