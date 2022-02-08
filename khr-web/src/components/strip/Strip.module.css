@@ -59,6 +59,6 @@
         font-size: 1rem;
     }
     .strip{
-        background-size: auto 100%;
+        background-size: auto 100vh;
     }
 }
