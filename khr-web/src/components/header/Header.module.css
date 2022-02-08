@@ -1,13 +1,13 @@
 .header{
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 20%;
+    width: 60%;
     max-height: 200px;
-    padding: 30px 15%;
+    /* padding: 30px 15%; */
     display: flex;
     justify-content: space-between;
-    align-content: flex-start;
+    align-content: center;
     z-index: 100;
     transition: all 0.3s ease-out;
 
@@ -17,22 +17,60 @@
     top: -200px;
 }
 .logo{
-    position: relative;
-    top:0;
-    max-width: 220px;
+    /* max-width: 220px; */
     max-height: 80px;
+    margin: 0;
+    z-index: 100;
+    margin-left: 10px;
 }
 
+.toggle{
+    margin-top: auto;
+    cursor: pointer;
+    z-index: 100;
+    margin-right: 10px;
+}
+.menuIcon{
+    width: 2em !important;
+    height: 2em !important;
+}
+.menu{
+    z-index: 10;
+}
+@media (min-width:1201px){
+    .toggle{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+}
 @media (max-width:1200px){
+    .links{
+        display: none;
+    }
+    .menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        min-height: 60vh;
+        background:rgba(0, 0, 0, 0.6);
+        padding: 100px 0 0 0;
+    }
+}
+
+@media (max-width:768px){
+    .links{
+        display: none;
+    }
     .header{
+        width: 90%;
+        left: 5%;
         display: flex;
         flex-wrap: wrap;
-        padding: 10px;
-        width: 100%;
-        /* background-color: rgba(0, 0, 0, 0.3); */
     }
-    .logo{
-        max-width: 30%;
-        margin: auto;
-    }
+    
 }
