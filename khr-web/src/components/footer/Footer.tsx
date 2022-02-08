@@ -1,6 +1,6 @@
-import { url } from 'inspector';
-import React from 'react';
-import SubscriptionForm from '../form/SubscriptionForm';
+// import { url } from 'inspector';
+// import React from 'react';
+// import SubscriptionForm from '../form/SubscriptionForm';
 import styles from './Footer.module.css'
 const Footer = () => {
     return (

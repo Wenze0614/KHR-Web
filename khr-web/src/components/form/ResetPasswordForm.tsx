@@ -1,9 +1,9 @@
-import { Formik, FormikHelpers, replace } from 'formik';
+import { Formik, FormikHelpers} from 'formik';
 import * as Yup from 'yup'
-import React, { useState, ReactNode, useContext } from 'react';
-import { useMutation, DocumentNode, gql } from "@apollo/client";
+import  { useState, useContext } from 'react';
+import { useMutation,  gql } from "@apollo/client";
 import { InputlArea } from '../ui/form-components';
-import Button from '../ui/Button';
+import MyButton from '../ui/MyButton';
 import styles from './SignInForm.module.css'
 import Card from '../ui/Card'
 import AuthContext from '../../store/auth-context';
@@ -74,7 +74,7 @@ const ResetPasswordForm = () => {
                             <p>Enter your new password and confirmation</p>
                             <InputlArea label='New Password' className='text-input' name='password' type='password' placeholder=''></InputlArea>
                             <InputlArea label='Re-enter Password' className='text-input' name='passwordConfirmation' type='password' placeholder=''></InputlArea>
-                            <Button type="submit" disable={!formik.dirty || !formik.isValid ? true : false}>Reset Password</Button>
+                            <MyButton type="submit" disable={!formik.dirty || !formik.isValid ? true : false}>Reset Password</MyButton>
                         </form>)
                 }}
             </Formik>

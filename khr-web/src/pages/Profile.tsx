@@ -1,5 +1,5 @@
-import React from 'react'
-import Button from '../components/ui/Button'
+
+import MyButton from '../components/ui/MyButton'
 import { useContext } from 'react'
 import AuthContext from '../store/auth-context'
 import Strip from '../components/strip/Strip'
@@ -10,7 +10,7 @@ export default function Profile() {
     return (
         <div>
             <Strip>
-                <Button type="button" onClick={()=>{authCtx.logout();navigate('/',{replace:true})}}>Log Out</Button>
+                <MyButton type="button" onClick={()=>{authCtx.logout();navigate('/',{replace:true})}}>Log Out</MyButton>
             </Strip>
         </div>
     )

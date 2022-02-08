@@ -1,9 +1,8 @@
 import { gql } from '@apollo/client';
-import React from 'react'
 import Blog from '../components/blog/Blog';
 import Strip from '../components/strip/Strip';
-import Button from '../components/ui/Button';
-import styles from './Adoption.module.css'
+import MyButton from '../components/ui/MyButton';
+// import styles from './Adoption.module.css'
 
 type ImageData = {
   attributes: {
@@ -50,7 +49,7 @@ export default function Adoption() {
         <h1>Adoption</h1>
         <p style={{ fontSize: '1.5rem', textAlign: 'center' }}>Find Horse A Home</p>
         <p style={{fontSize:"0.8rem"}}> (Click to download adoption application form)</p>
-        <Button type='button'><a href='Adoption-Application.pdf' download>Download</a></Button>
+        <MyButton type='button'><a href='Adoption-Application.pdf' download>Download</a></MyButton>
       </Strip>
       {/* <Strip background="home/home-2.jpg">Adoption</Strip> */}
       <Strip  background="adoption/adoption-2.jpg" darkness='0.5'>

@@ -1,14 +1,14 @@
 import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup'
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { InputlArea } from '../ui/form-components';
-import Button from '../ui/Button';
+import MyButton from '../ui/MyButton';
 import styles from './SignInForm.module.css'
 import Card from '../ui/Card'
-import { useMutation, DocumentNode, gql } from "@apollo/client";
+import { useMutation, gql } from "@apollo/client";
 import AuthContext from '../../store/auth-context';
 import { useNavigate } from 'react-router-dom';
-import FlashMessage from '../ui/FlashMessage';
+// import FlashMessage from '../ui/FlashMessage';
 import Alert from '@mui/material/Alert';
 import CircularProgress from '@mui/material/CircularProgress';
 type logInProps = {
@@ -90,7 +90,7 @@ const SignInForm = () => {
                             <InputlArea label='Email' className='text-input' name='email' type='email' placeholder=''></InputlArea>
                             <InputlArea label='Password' className='text-input' name='password' type='password' placeholder=''></InputlArea>
                             <InputlArea label='Confirm Password' className='text-input' name='reEnterPassword' type='password' placeholder=''></InputlArea>
-                            <Button type="submit" disable={!formik.dirty || !formik.isValid ? true:false}>Sign Up</Button>
+                            <MyButton type="submit" disable={!formik.dirty || !formik.isValid ? true:false}>Sign Up</MyButton>
                         </form>)
                 }}
             </Formik>

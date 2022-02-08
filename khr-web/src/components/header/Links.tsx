@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom"
 import styles from './Links.module.css'
-import { useContext } from 'react'
-import AuthContext from "../../store/auth-context"
+// import { useContext } from 'react'
+// import AuthContext from "../../store/auth-context"
 const Links = () => {
-    const authCtx = useContext(AuthContext)
+    // const authCtx = useContext(AuthContext)
     return (
         <ul className={styles.links}>
             <li><NavLink to="/" className={(NavStatus) => NavStatus.isActive ? styles['active'] : ''}>Home</NavLink></li>

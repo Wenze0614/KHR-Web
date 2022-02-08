@@ -1,9 +1,9 @@
-import { Formik, FormikHelpers, replace } from 'formik';
+import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup'
-import React, { useState, ReactNode, useContext } from 'react';
-import { useMutation, DocumentNode, gql } from "@apollo/client";
+import { useState,  useContext } from 'react';
+import { useMutation, gql } from "@apollo/client";
 import { InputlArea } from '../ui/form-components';
-import Button from '../ui/Button';
+import MyButton from '../ui/MyButton';
 import styles from './SignInForm.module.css'
 import Card from '../ui/Card'
 import AuthContext from '../../store/auth-context';
@@ -104,7 +104,7 @@ const SignInForm = () => {
                             <InputlArea label='Email' className='text-input' name='email' type='email' placeholder=''></InputlArea>
                             {formik.values.email ? <p>Forget your password? Click <span onClick={handleFprgetPassword.bind(null, formik.values.email)}>here</span> to reset</p> : null}
                             <InputlArea label='Password' className='text-input' name='password' type='password' placeholder=''></InputlArea>
-                            <Button type="submit" disable={!formik.dirty || !formik.isValid ? true : false}>Log In</Button>
+                            <MyButton type="submit" disable={!formik.dirty || !formik.isValid ? true : false}>Log In</MyButton>
                             {/* {emailSent && <FlashMessage message="Reset password email successfully sent" position={{ vertical: 'bottom', horizontal: 'right' }} type="success" time={6000}></FlashMessage>} */}
                             {showFlash && <FlashMessage open={true} message={flashContent.message} position={{ vertical: 'bottom', horizontal: 'right' }} type={flashContent.type} time={6000}></FlashMessage>}
                         </form>)

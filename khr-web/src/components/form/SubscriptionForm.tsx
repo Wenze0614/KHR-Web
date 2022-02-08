@@ -1,8 +1,7 @@
 import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup'
-import React from 'react';
 import { InputlArea } from '../ui/form-components';
-import Button from '../ui/Button';
+import MyButton from '../ui/MyButton';
 import styles from './SubscriptionForm.module.css'
 type subscriptionProps = {
     email: string
@@ -18,7 +17,7 @@ const SubscriptionForm = () => {
             <form className={styles['subscription-form']}>
                 <p>Subscribe to our latest News</p>
                 <InputlArea label='Email' className='text-input' name='email' type='email' placeholder=''></InputlArea>
-                <Button type="submit">Submit</Button>
+                <MyButton type="submit">Submit</MyButton>
             </form>
         </Formik>
     );

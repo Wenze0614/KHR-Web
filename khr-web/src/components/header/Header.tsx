@@ -1,9 +1,9 @@
 import Links from './Links';
 import styles from './Header.module.css'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import { motion, AnimatePresence, useCycle } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const listsVar = {
     open: {
@@ -43,28 +43,41 @@ const iconVar = {
 }
 const Header = () => {
     const [show, setShow] = useState(true)
-    const [prevOffSet, setPrevOffSet] = useState(window.scrollY)
+    // const [prevOffSet, setPrevOffSet] = useState(window.scrollY)
+    const prevOffSet = useRef(window.scrollY)
     const [active, setActive] = useState(false)
-    const handleScroll = () => {
-        setPrevOffSet(PrevOffSet => {
-            if (PrevOffSet > window.scrollY) {
+    const handleScroll = useCallback(() => {
+        // setPrevOffSet(PrevOffSet => {
+        //     if (PrevOffSet > window.scrollY) {
+        //         setShow(true)
+        //     } else {
+        //         setShow(false)
+        //     }
+        //     if (window.scrollY === 0) {
+        //         setShow(true)
+        //     }
+        //     return window.scrollY
+        // })
+        // console.log(prevOffSet,window.scrollY)
+
+        if (window.scrollY === 0) {
+            setShow(true)
+        } else {
+            if (prevOffSet.current > window.scrollY) {
                 setShow(true)
             } else {
                 setShow(false)
             }
-            if (window.scrollY === 0) {
-                setShow(true)
-            }
-            return window.scrollY
-        })
-    }
+        }
+        prevOffSet.current = window.scrollY
+    }, [])
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
         return () => {
             window.removeEventListener('scroll', handleScroll)
         }
-    }, [])
+    }, [handleScroll])
     return (
 
         <header className={`${styles['header']} ${!show && styles.hide}`}>

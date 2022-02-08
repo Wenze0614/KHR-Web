@@ -1,6 +1,6 @@
 import { useQuery, DocumentNode } from "@apollo/client";
 import { gql } from '@apollo/client';
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Horse } from "../../pages/Adoption";
 // import Card from "../ui/Card";
 import styles from './Blog.module.css'
@@ -133,7 +133,7 @@ const Blog = (props: BlogProps) => {
                         disabledClassName={styles.paginationDisable}
                         activeClassName={styles.paginationActive}></ReactPaginate>
                     <ul className={styles.blogs}>
-                        displayBlogs
+                        {displayBlogs}
                     </ul>
                 </>
                 : <p>(Data will be uploaded very soon:)</p>}
