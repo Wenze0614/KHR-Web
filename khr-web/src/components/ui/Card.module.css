@@ -20,6 +20,7 @@
     height: 100%;
     border-radius: 6px;
     background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.9) 30%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0.3) 75%,rgba(255,255,255,0) 100%);
+    /* background: linear-gradient(135deg,  rgba(82,113,187,1) 0%,rgba(82,113,187,0.9) 30%,rgba(82,113,187,0.8) 50%,rgba(82,113,187,0.3) 75%,rgba(82,113,187,0) 100%); */
 }
 .card>p {
     position: absolute;
@@ -31,6 +32,7 @@
     height: 100%;
     /* padding:0 10px; */
     color:#5271BB;
+    /* color: white; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,9 +46,11 @@
     display: inline-block;
     left: -20px;
     color: white;
+    /* color:#5271BB; */
     border-radius: 6px 0 0 6px;
     padding: 15px 30px 15px 10px;
     background: linear-gradient(to right, rgba(82, 113, 187,1) 0%,rgba(82, 113, 187,0.8) 80%,rgba(82, 113, 187,0) 100%);
+    /* background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.8) 80%,rgba(255,255,255,0) 100%); */
 }
 
 .service-card p{
