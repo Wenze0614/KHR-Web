@@ -8,17 +8,17 @@ import { motion, AnimatePresence, useCycle } from 'framer-motion'
 const listsVar = {
     open: {
         opacity: 1,
-        y: 0,
+        y: '100vh',
         transition: {
-            duration: .3,
+            duration: .5,
             ease: "easeOut"
         }
     },
     close: {
         opacity: 0,
-        y: -100,
+        y: 0,
         transition: {
-            duration: .3,
+            duration: .5,
             ease: "easeOut"
         }
     }

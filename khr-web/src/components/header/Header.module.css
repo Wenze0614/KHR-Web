@@ -36,6 +36,7 @@
 }
 .menu{
     z-index: 10;
+    top: -100vh;
 }
 @media (min-width:1201px){
     .toggle{
