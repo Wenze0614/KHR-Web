@@ -14,7 +14,7 @@ const Home = () => {
             <Strip background="home/home-2.jpg" darkness='0.3'>
                 <h2>About Us</h2>
                 <p>Kalina Horse Rescue was established for the horses, of WA who need a safe place to call home, by a group of people who are dedicated to helping horses.</p>
-                <p>Kalina Horse Rescue is a specialist equine service we, rescue, rehabilitate, re-home, and retire horses.</p>
+                <p>Kalina Horse Rescue is a specialist equine service where we, rescue, rehabilitate, and re-home horses to their forever homes.</p>
                 <p>We help horses from Perth metro and regional areas.</p>
             </Strip>
             <Strip background="home/home-3.jpg" darkness='0.6'>
