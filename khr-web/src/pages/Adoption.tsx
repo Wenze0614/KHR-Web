@@ -60,9 +60,9 @@ export default function Adoption() {
           If the new owners can no longer care for the horses they must be returned to KHR, the horses must not be sold on or given away. 
           For all enquiries and expressions of interest in adopting a horse please contact us via email, our contact form or call us on 0411 053 853 
         </p> */}
-        <p>All horses are adopted on a lifetime lease contract</p>
-        <p>Adoption fees vary, from $250 to $2500, depending on the care and treatment the horses have received on their road to recovery.</p>
-        <p>All adoption fees are donations to KHS, and no profit is made on the adoption of horses, all donations ensure KHS can continue our work to help horses in need. </p>
+        <p>All horses are adopted on a lifetime lease contract.</p>
+        <p>Adoption fees vary from $250 to $2500, depending on the care and treatment the horses have received on their road to recovery.</p>
+        <p>All adoption fees are donations to KHS, and no profit is made on the adoption of horses. All donations ensure KHS can continue our work to help horses in need. </p>
         <p>If the new owners can no longer care for the horses they must be returned to KHR, the horses must not be sold on or given away. </p>
         <p>For all enquiries and expressions of interest in adopting a horse please contact us via email, our contact form or call us on 0411 053 853 </p>
       </Strip>

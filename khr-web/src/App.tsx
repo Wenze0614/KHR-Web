@@ -29,7 +29,7 @@ function App() {
     <ApolloProvider client={client}>
       <div className={styles.app}>
         <Header></Header>
-        <a className={styles["vol-button"]} href='Volunteer-Application.pdf' download="volunteer-form.pdf">Apply for volunteer</a>
+        {/* <a className={styles["vol-button"]} href='Volunteer-Application.pdf' download="volunteer-form.pdf">Apply for volunteer</a> */}
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/adoption' element={<Adoption />}></Route>
