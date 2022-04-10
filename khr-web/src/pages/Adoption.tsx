@@ -47,7 +47,7 @@ export default function Adoption() {
     <>
       <Strip background="adoption/adoption-1.png" darkness='0.2'>
         <h1>Adoption</h1>
-        <p style={{ fontSize: '1.5rem', textAlign: 'center' }}>Find Horse A Home</p>
+        {/* <p style={{ fontSize: '1.5rem', textAlign: 'center' }}>Find Horse A Home</p> */}
         <p style={{fontSize:"0.8rem"}}> (Click to download adoption application form and terms{'&'}conditions)</p>
         <div className={styles['button-group']}>
         <MyButton type='button'><a href='Adoption-Application.pdf' download>Adoption Form</a></MyButton>
