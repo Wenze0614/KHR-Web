@@ -8,3 +8,16 @@
     font-weight: bolder;
     margin: 0;
 } */
+
+.button-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:1200px) {
+    .button-group{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

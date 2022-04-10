@@ -9,6 +9,8 @@
     padding: 10px 30px;
     transition:all 0.5s ease-out;
     cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .myButton:hover{
@@ -24,3 +26,11 @@
     color:#5782BB;
 }
 
+@media (max-width:1200px) {
+    .content *{
+        font-size: 1rem;
+    }
+    .myButton{
+        padding: 5px 15px;
+    }
+}

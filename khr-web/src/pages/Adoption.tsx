@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import Blog from '../components/blog/Blog';
 import Strip from '../components/strip/Strip';
 import MyButton from '../components/ui/MyButton';
-// import styles from './Adoption.module.css'
+import styles from './Adoption.module.css'
 
 type ImageData = {
   attributes: {
@@ -48,8 +48,11 @@ export default function Adoption() {
       <Strip background="adoption/adoption-1.png" darkness='0.2'>
         <h1>Adoption</h1>
         <p style={{ fontSize: '1.5rem', textAlign: 'center' }}>Find Horse A Home</p>
-        <p style={{fontSize:"0.8rem"}}> (Click to download adoption application form)</p>
-        <MyButton type='button'><a href='Adoption-Application.pdf' download>Download</a></MyButton>
+        <p style={{fontSize:"0.8rem"}}> (Click to download adoption application form and terms{'&'}conditions)</p>
+        <div className={styles['button-group']}>
+        <MyButton type='button'><a href='Adoption-Application.pdf' download>Adoption Form</a></MyButton>
+        <MyButton type='button'><a href='Adoption-TermsConditions.pdf' download>Adoption Terms{'&'}Conditions</a></MyButton>
+        </div>
       </Strip>
       {/* <Strip background="home/home-2.jpg">Adoption</Strip> */}
       <Strip  background="adoption/adoption-2.jpg" darkness='0.5'>
