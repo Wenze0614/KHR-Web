@@ -12,10 +12,14 @@ const Footer = () => {
             </div>
             {/* <SubscriptionForm /> */}
             <div className={styles.contact}>
-                <h3>- Contact -</h3>
+                <h3>- CONTACT -</h3>
                 <p>Mobile:<span> 0411 053 853</span></p>
                 <p>Email:<span> admin@kalinahorserescue.org</span></p>
                 <p>Address:<span> PO BOX 45 Stoneville WA 608</span></p>
+                <h3>- DONATE -</h3>
+                <p>Kalina Horse Rescue</p>
+                <p>BSB:<span>006-115</span></p>
+                <p>Account:<span>1102 5771</span></p>
             </div>
         </footer>
     );
